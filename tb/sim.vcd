@@ -1,0 +1,42 @@
+$date
+	Thu Jul 21 17:05:48 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_IMEM $end
+$var wire 32 ! data_out [31:0] $end
+$var reg 32 " addr [31:0] $end
+$var integer 32 # i [31:0] $end
+$scope module memoryA $end
+$var wire 32 $ addr [31:0] $end
+$var wire 32 % data_out [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10010001101000101011001111000 %
+b0 $
+b110010 #
+b0 "
+b10010001101000101011001111000 !
+$end
+#40
+b11011101110111011101110111011101 !
+b11011101110111011101110111011101 %
+b100 "
+b100 $
+#60
+b11101110111011101110111011101110 !
+b11101110111011101110111011101110 %
+b1000 "
+b1000 $
+#80
+b11001100110011001100110011001100 !
+b11001100110011001100110011001100 %
+b1100 "
+b1100 $
