@@ -4,7 +4,6 @@
 
 [![N|RiscV](https://riscv.org/wp-content/uploads/2015/10/cropped-LI_profile.png)](https://riscv.org/wp-content/uploads/2015/10/cropped-LI_profile.png)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 ## Features
 Currently this processor support following instruction.
 
@@ -29,10 +28,5 @@ To see the waveform use gtkwave after generate test.vcd file from previous comma
 ```sh
 gtkwave test.vcd
 ```
-
-
-## License
-
-MIT
 
 **Free Core Hell Yeah!**
