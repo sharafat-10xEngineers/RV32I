@@ -1,4 +1,10 @@
-`include "../IMEM.v"
+//    name    = tb_IMEM.v
+//    author  = Sharafat Hussain
+//    email   = sharafat.hussain@10xengineers.ai
+//    purpose = Testbench for IMEM module (../rtl/IMEM.v).
+
+
+`include "../memory/IMEM.v"
 
 module tb_IMEM;
     reg   [31:0]  addr;
@@ -22,7 +28,7 @@ module tb_IMEM;
         // data_in = 0;
 
         for (i = 0; i < 50; i++) begin
-            $display ("mem[%d] = %d",i, memoryA.imem[i]);
+            $display ("mem[%d] = %h",i, memoryA.imem[i]);
         end
         
         #20

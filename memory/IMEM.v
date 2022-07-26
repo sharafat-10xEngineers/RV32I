@@ -5,13 +5,15 @@
 //              by PC registor. Instruction are loaded from file
 //              name "instructions.txt" in hexadeciamal notation.
 
+// `include "../defines.vh"
+
 module IMEM
     `ifdef CUSTOM_DEFINE
         #(
-            parameter   IMEM_ADDR_WIDTH = IMEM_ADDR_WIDTH,
-                        IMEM_DATA_WIDTH = IMEM_DATA_WIDTH,
-                        IMEM_WIDTH = IMEM_WIDTH,
-                        IMEM_DEPTH = IMEM_DEPTH
+            parameter   IMEM_ADDR_WIDTH = `IMEM_ADDR_WIDTH,
+                        IMEM_DATA_WIDTH = `IMEM_DATA_WIDTH,
+                        IMEM_WIDTH = `IMEM_WIDTH,
+                        IMEM_DEPTH = `IMEM_DEPTH
         )
     `else
         #(
@@ -22,14 +24,13 @@ module IMEM
         )
     `endif
          
-
- (
+(
     input   [IMEM_ADDR_WIDTH-1:0]  addr,
     // input   [IMEM_DATA_WIDTH-1:0]  data_in,
     output  [IMEM_DATA_WIDTH-1:0]  data_out
 );
     
-    reg [IMEM_WIDTH:0] imem [0:IMEM_DEPTH];     // 8 x 256 memory
+    reg [IMEM_WIDTH-1:0] imem [IMEM_DEPTH-1:0];     // 8 x 256 memory
     
     // asynchronus read of 32 bit data from byte align memory
     assign data_out = { imem[addr], imem[addr+1], imem[addr+2], imem[addr+3] };  

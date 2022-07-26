@@ -1,8 +1,50 @@
-12 34 56 78
-DD DD DD DD
-EE EE EE EE
-CC CC CC CC
-11 11 11 11
-FF FF FF FF
-FF FF FF FF
-FF FF FF FF
+//  Calculating GCD of 12 and 9
+
+//00 C0 04 13    //addi x8 x0 12
+//00 90 04 93    //addi x9 x0 9    
+//00 94 0C 63    //beq x8 x9 24    
+//00 94 46 63    //blt x8 x9 12    
+//40 94 04 33    //sub x8 x8 x9    
+//FF 5F F0 6F    //jal x0 -12    
+//40 84 84 B3    //sub x9 x9 x8
+//FE DF F0 6F    //jal x0 -20    
+//00 00 00 6F    //jal x0 0
+
+//Calculating LCM of 2 and 8
+
+// 00 80 00 93    //addi x1 x0 8    addi x1, x0, 8
+// 00 20 01 13    //addi x2 x0 2    addi x2, x0, 2
+// 00 00 81 B3    //add x3 x1 x0    add x3, x1, x0
+// 00 01 02 33    //add x4 x2 x0    add x4, x2, x0
+// 00 41 E6 63    //bltu x3 x4 12    start: bltu x3,x4,less_x3
+// 00 32 68 63    //bltu x4 x3 16    bltu x4,x3,less_x4
+// 00 41 8A 63    //beq x3 x4 20    beq x3,x4,stop
+// 00 11 81 B3    //add x3 x3 x1    less_x3: add x3,x3,x1
+// FF 1F F0 6F    //jal x0 -16    j start
+// 00 22 02 33    //add x4 x4 x2    less_x4: add x4,x4,x2
+// FE 9F F0 6F    //jal x0 -24    j start
+// 00 00 00 6F    //jal x0 0    stop: j stop
+
+dmem[100] = 25 pass
+00 50 01 13
+00 C0 01 93
+FF 71 83 93
+00 23 E2 33
+00 41 F2 B3
+00 42 82 B3
+02 72 88 63
+00 41 A2 33
+00 02 04 63
+00 00 02 93
+00 23 A2 33
+00 52 03 B3
+40 23 83 B3
+04 71 AA 23
+06 00 21 03
+00 51 04 B3
+00 80 01 EF
+00 10 01 13
+00 91 01 33
+02 21 A0 23
+00 21 00 63
+

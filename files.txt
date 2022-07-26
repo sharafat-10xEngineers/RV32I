@@ -1,0 +1,14 @@
+../defines.vh
+../rtl/inst_fetch/mux.v
+../rtl/inst_fetch/IF_unit.v
+../rtl/inst_fetch/registor.v
+../rtl/mem_access/MA_unit.v
+../rtl/write_back/WB_unit.v
+../rtl/inst_decode/controller.v
+../rtl/inst_decode/imm_gen.v
+../rtl/inst_decode/regfile.v
+../rtl/inst_execute/alu.v
+../rtl/inst_execute/branch_comp.v
+../rtl/inst_execute/Exec_unit.v
+../memory/IMEM.v
+../memory/DMEM.v
