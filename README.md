@@ -21,7 +21,7 @@ Currently this processor support following instruction.
 simulate using icarus verilog. After Cloning repository run following command to simmulate.
 ```sh
 cd tb
-iverilog -o sim -c files.txt
+iverilog -o sim -c ../files.txt
 vvp sim
 ```
 To see the waveform use gtkwave after generate test.vcd file from previous commands.
