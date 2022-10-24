@@ -10,27 +10,27 @@
 // `include "../../memory/IMEM.v"
 
 module IF_unit 
-    `ifdef CUSTOM_DEFINE
-        #(
-            parameter   INSTRUCTION_WIDTH = `INSTRUCTION_WIDTH,
-                        PC_WIDTH = `PC_WIDTH
-        )
-    `else 
-        #(
-            parameter   INSTRUCTION_WIDTH = 32,
-                        PC_WIDTH 32
-        )
-    `endif
+    // `ifdef CUSTOM_DEFINE
+    //     #(
+    //         parameter   INSTRUCTION_WIDTH = `INSTRUCTION_WIDTH,
+    //                     PC_WIDTH = `PC_WIDTH
+    //     )
+    // `else 
+    //     #(
+    //         parameter   INSTRUCTION_WIDTH = 32,
+    //                     PC_WIDTH 32
+    //     )
+    // `endif
 (
     input clk, 
     input reset,
     input PCSel,
     input [31:0] from_alu,
-    output [PC_WIDTH-1:0] pc_plus_4,
-    output [PC_WIDTH-1:0] pc_out,
-    output [INSTRUCTION_WIDTH-1:0] inst
+    output [`PC_WIDTH-1:0] pc_plus_4,
+    output [`PC_WIDTH-1:0] pc_out,
+    output [`INSTRUCTION_WIDTH-1:0] inst
 );
-    wire [PC_WIDTH-1:0] if_mux_out; // mux out wire
+    wire [`PC_WIDTH-1:0] if_mux_out; // mux out wire
 
     registor PC (
         .clk(clk),
