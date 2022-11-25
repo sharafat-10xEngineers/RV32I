@@ -78,7 +78,7 @@
 `define DMEM_ADDR_WIDTH 32  // address bits of instruction memory
 `define DMEM_DATA_WIDTH 32  // output port width of IMEM
 `define DMEM_WIDTH 8        // data bits of each memory unit
-`define DMEM_DEPTH 256      // num of memory unit
+`define DMEM_DEPTH 256      // num of memory locations
 
 ////////////////
 // WRITE BACK //
